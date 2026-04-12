@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eGov Foundation | Digital Public Infrastructure</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Colors based on eGov.org.in */
+        :root {
+            --primary-blue: #00B5CA;
+            --dark-blue: #0F172A;
+            --light-bg: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        /* ==================First nav============================ */
+
+        /* =========================================== */
+        /* EXACT MATCH TO eGov.org.in TOP NAVBAR */
+        /* FIXED AT TOP, MENUS ON RIGHT SIDE */
+        /* =========================================== */
+
+        /* Container c58f992 - Outer container with background - FIXED AT TOP */
+        .elementor-element-c58f992 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #E6F3FB;
+            /* Light blue background */
+            z-index: 1001;
+            padding: 8px 0;
+            margin: 0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Container 09f5fe9 - Inner container - RIGHT ALIGNED */
+        .elementor-element-09f5fe9 {
+            --display: flex;
+            --flex-direction: row;
+            --flex-wrap: initial;
+            --justify-content: flex-end;
+            --align-items: center;
+            --gap: 0px;
+            --row-gap: 0px;
+            --column-gap: 0px;
+            --width: 83%;
+            --min-height: initial;
+            --height: auto;
+            --text-align: initial;
+            --position: relative;
+            --z-index: revert;
+            --overflow: visible;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            width: 83%;
+            margin-left: auto;
+            margin-right: 0;
+            position: relative;
+            padding: 0;
+        }
+
+        /* Uael Nav Menu Widget */
+        .elementor-widget-uael-nav-menu {
+            width: auto;
+        }
+
+        .elementor-widget-container {
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            width: auto;
+        }
+
+        /* Uael Nav Menu Main Container */
+        .uael-nav-menu {
+            width: auto;
+        }
+
+        /* Horizontal Layout - RIGHT ALIGNED */
+        .uael-nav-menu__layout-horizontal {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Navigation Menu List - RIGHT ALIGNED */
+        .uael-nav-menu-custom {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        /* Menu Items */
+        .uael-nav-menu-custom .menu-item {
+            position: relative;
+            list-style: none;
+        }
+
+        /* Menu Links */
+        .uael-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            color: #1E293B;
+            text-decoration: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Underline Pointer Effect - uael-pointer__underline */
+        .uael-pointer__underline .uael-menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #00B5CA;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        /* Hover effect - uael-animation__grow (scale and underline) */
+        .uael-pointer__underline .uael-menu-item:hover::after {
+            width: calc(100% - 32px);
+        }
+
+        .uael-pointer__underline .uael-menu-item:hover {
+            color: #00B5CA;
+            transform: scale(1.02);
+        }
+
+        /* Sub Arrow Styling - matches uael-submenu-icon-arrow */
+        .uael-menu-toggle {
+            margin-left: 6px;
+            font-size: 12px;
+            transition: transform 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .uael-menu-toggle i {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .menu-item:hover .uael-menu-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Slide Up Animation for Submenu - uael-submenu-animation-slide_up */
+        .uael-submenu-animation-slide_up .sub-menu {
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Submenu styling - appears on hover */
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: auto;
+            right: 0;
+            background: white;
+            min-width: 200px;
+            padding: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .menu-item:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sub-menu .menu-item {
+            padding: 0;
+        }
+
+        .sub-menu .uael-menu-item {
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+
+        .sub-menu .uael-menu-item::after {
+            display: none;
+        }
+
+        .sub-menu .uael-menu-item:hover {
+            background: #f5f5f5;
+            color: #00B5CA;
+            transform: none;
+        }
+
+        /* Responsive Breakpoint - uael-nav-menu__breakpoint-none */
+        @media (max-width: 1024px) {
+            .uael-nav-menu__breakpoint-none {
+                display: block;
+            }
+        }
+
+        /* Toggle button (hidden on desktop) */
+        .uael-nav-menu__toggle {
+            display: none;
+        }
+
+        /* Screen reader text */
+        .screen-reader-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .elementor-element-09f5fe9 {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .uael-nav-menu-custom {
+                justify-content: center;
+            }
+
+            .uael-menu-item {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* ===================language dropdown=========== */
+        /* =========================================== */
+        /* LANGUAGE SWITCHER DROPDOWN STYLES */
+        /* =========================================== */
+
+        .gt_switcher_wrapper {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .gt_switcher-popup {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .gt_switcher-popup:hover {
+            background: rgba(0, 181, 202, 0.1);
+        }
+
+        .gt_switcher-popup img {
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        .lang_text {
+            color: #1E293B;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .caret-icon {
+            color: #00B5CA;
+            font-size: 14px;
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .gt_switcher_wrapper:hover .caret-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Language Dropdown */
+        .gt_white_content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 220px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 8px 0;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .gt_switcher_wrapper:hover .gt_white_content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gt_languages {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .glink {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #1E293B;
+        }
+
+        .glink:hover {
+            background: #f5f5f5;
+            color: #00B5CA;
+        }
+
+        .glink img {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+        }
+
+        .gt-current-lang {
+            background: #E6F3FB;
+            font-weight: 600;
+            color: #00B5CA;
+        }
+
+        .gt_black_overlay {
+            display: none;
+        }
+
+        /* Scrollbar styling for language dropdown */
+        .gt_languages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .gt_languages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .gt_languages::-webkit-scrollbar-thumb {
+            background: #00B5CA;
+            border-radius: 4px;
+        }
+
+        /* ==================Second nav=========================== */
+        /* =========================================== */
+        /* MEGA MENU FOR PRODUCTS & SOLUTIONS */
+        /* =========================================== */
+
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: auto;
+            right: 0;
+            width: 900px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            padding: 20px;
+        }
+
+        .menu-item:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mega-menu-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .mega-col {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .mega-col.blue-bg {
+            background: #E6F3FB;
+        }
+
+        .mega-col.white-bg {
+            background: white;
+        }
+
+        .mega-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1E293B;
+            margin-bottom: 15px;
+            padding: 15px 15px 0 15px;
+        }
+
+        .mega-col ul {
+            list-style: none;
+            padding: 0 15px 15px 15px;
+            margin: 0;
+        }
+
+        .mega-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .mega-col ul li a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 13px;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .mega-col ul li a:hover {
+            color: #00B5CA;
+        }
+
+        /* =========================================== */
+        /* SECOND NAVBAR - MAIN */
+        /* =========================================== */
+
+        .second-navbar {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        body.scrolled .second-navbar {
+            top: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .second-navbar .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        .main-nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .main-nav-links>li {
+            position: relative;
+        }
+
+        .main-nav-links>li>a {
+            text-decoration: none;
+            color: #1E293B;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-nav-links>li>a:hover {
+            color: #00B5CA;
+        }
+
+        .main-nav-links .dropdown-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-nav-links>li:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Regular dropdown for other menus */
+        .regular-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            padding: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .main-nav-links>li:hover .regular-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .regular-dropdown li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #475569;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .regular-dropdown li a:hover {
+            background: #f5f5f5;
+            color: #00B5CA;
+        }
+
+        .search-icon {
+            font-size: 18px;
+            cursor: pointer;
+            color: #1E293B;
+            transition: color 0.3s ease;
+        }
+
+        .search-icon:hover {
+            color: #00B5CA;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .mega-menu {
+                width: 700px;
+                right: -100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+
+            .second-navbar {
+                top: 70px;
+            }
+
+            .main-nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .mega-menu {
+                display: none;
+            }
+        }
+
+        /* ================Hero section========================= */
+        /* Hero Section - Exact match to eGov.org.in */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        /* Background Image - positioned on right side */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            background-image: url('assets/New-Home-Page-Banner-Image.png');
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Content container - ensure it's above background */
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Ensure text is visible and above image */
+        .hero-section .row {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title span {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mobile-hero-image1 {
+            height: 200px;
+        }
+
+        .scroll-underline {
+            position: relative;
+        }
+
+        .scroll-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-blue);
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+            transform-origin: left;
+        }
+
+        .scroll-underline.visible-line::after {
+            transform: scaleX(1);
+        }
+
+        .btn-style-1 {
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-style-1:hover {
+            background: #0098a8;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-style-2 {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            border: 1px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-style-2:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Optional: Add a subtle overlay to ensure text readability if needed */
+        .hero-section .col-lg-7 {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section::before {
+                display: none;
+            }
+        }
+
+        /* =================Hero section end======================= */
+
+        /* Stats Section with Background Image */
+        .stats-section {
+            background-image: url('https://placehold.co/1920x600/1E293B/white?text=Background+Map');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 80px 0;
+        }
+
+        .stats-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .stats-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        /* Big Problems Section */
+        .problems-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--text-dark);
+        }
+
+        .section-title strong {
+            font-weight: 700;
+        }
+
+        .nav-tabs-custom {
+            border: none;
+            gap: 15px;
+        }
+
+        .nav-tabs-custom .nav-link {
+            background: #F1F5F9;
+            border: none;
+            border-radius: 40px;
+            padding: 12px 24px;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs-custom .nav-link.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .grid-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-card .card-content {
+            padding: 25px;
+        }
+
+        .grid-card .card-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        /* DIGIT Platform Section */
+        .digit-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .digit-logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Latest at eGov Section */
+        .latest-section {
+            padding: 80px 0;
+            background: #F8FAFC;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .resource-body {
+            padding: 20px;
+        }
+
+        .resource-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #EEF2FF;
+            color: var(--primary-blue);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        /* Supporters Section */
+        .supporters-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .supporter-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            max-height: 60px;
+        }
+
+        .supporter-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 60px 0 30px;
+        }
+
+        .footer h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 12px 15px;
+            border-radius: 40px;
+            color: white;
+            width: 100%;
+        }
+
+        .newsletter-input::placeholder {
+            color: #94A3B8;
+        }
+
+        .btn-subscribe {
+            background: var(--primary-blue);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .nav-tabs-custom {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ====================First nav=============================== -->
+    <!-- =========================================== -->
+    <!-- EXACT MATCH - TOP NAVBAR FROM eGov.org.in -->
+    <!-- =========================================== -->
+    <div class="elementor-element-c58f992 e-con-full e-flex e-con-e-child"
+        data-settings='{"background_background":"classic"}'>
+        <div class="elementor-element-09f5fe9 e-con-full e-flex e-con-e-child">
+            <div class="elementor-widget-uael-nav-menu">
+                <div class="elementor-widget-container">
+                    <div class="uael-nav-menu uael-layout-horizontal uael-nav-menu-layout uael-pointer__underline uael-animation__grow"
+                        data-layout="horizontal">
+                        <div role="button" class="uael-nav-menu__toggle elementor-clickable" aria-haspopup="true"
+                            aria-expanded="false">
+                            <span class="screen-reader-text">Main Menu</span>
+                            <div class="uael-nav-menu-icon"></div>
+                        </div>
+                        <nav class="uael-nav-menu__layout-horizontal uael-nav-menu__submenu-arrow" data-toggle-icon=""
+                            data-close-icon="" data-full-width="">
+                            <!-- ===================================icon============ -->
+                            <div class="elementor-widget-container">
+                                <a href="https://egov.org.in">
+                                    <img fetchpriority="high" width="30px" height="30px"
+                                        src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png"
+                                        class="attachment-large size-large wp-image-194887" alt="eGov-Foundation"
+                                        srcset="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png 861w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-300x114.png 300w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-768x291.png 768w"
+                                        sizes="(max-width: 861px) 100vw, 861px"> </a>
+                            </div>
+                            <!-- ================================================ -->
+                            <ul class="uael-nav-menu uael-nav-menu-custom uael-custom-wrapper">
+                                <!-- Events Menu Item -->
+                                <li class="menu-item menu-item-has-children parent parent-has-no-child"
+                                    data-dropdown-width="default" data-dropdown-pos="left">
+                                    <a href="https://egov.org.in/events" class="uael-menu-item">
+                                        Events
+                                        <span class="uael-menu-toggle sub-arrow parent-item">
+                                            <i class="fa fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                    <!-- Submenu for Events -->
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Upcoming Events</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Past Events</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Webinars</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Contact Us Menu Item -->
+                                <li class="menu-item menu-item-has-children parent parent-has-no-child"
+                                    data-dropdown-width="default" data-dropdown-pos="left">
+                                    <a href="https://egov.org.in/contact-us/" class="uael-menu-item">
+                                        Contact us
+                                        <span class="uael-menu-toggle sub-arrow parent-item">
+                                            <i class="fa fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                    <!-- Submenu for Contact Us -->
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Email Us</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Call Us</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Office Locations</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#" class="uael-menu-item">Support</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <!-- =========================================== -->
+                                    <!-- LANGUAGE SWITCHER / COUNTRY DROPDOWN -->
+                                    <!-- =========================================== -->
+                                <li class="menu-item">
+                                    <div class="gt_switcher_wrapper">
+                                        <a href="#" class="gt_switcher-popup glink nturl notranslate">
+                                            <img src="https://flagcdn.com/w20/gb.png" width="20" height="20" alt="en">
+                                            <span class="lang_text">ENG</span>
+                                            <span class="caret-icon">
+                                                <i class="fa-solid fa-caret-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="gt_white_content notranslate">
+                                            <div class="gt_languages">
+                                                <a href="#" class="glink nturl" data-gt-lang="af">
+                                                    <img width="20" height="20" alt="af"
+                                                        src="https://flagcdn.com/w20/za.png">
+                                                    <span class="lang_text">Afrikaans</span>
+                                                </a>
+                                                <a href="#" class="glink nturl gt-current-lang" data-gt-lang="en">
+                                                    <img width="20" height="20" alt="en"
+                                                        src="https://flagcdn.com/w20/gb.png">
+                                                    <span class="lang_text">English</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="fr">
+                                                    <img width="20" height="20" alt="fr"
+                                                        src="https://flagcdn.com/w20/fr.png">
+                                                    <span class="lang_text">French</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="de">
+                                                    <img width="20" height="20" alt="de"
+                                                        src="https://flagcdn.com/w20/de.png">
+                                                    <span class="lang_text">German</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="pt">
+                                                    <img width="20" height="20" alt="pt"
+                                                        src="https://flagcdn.com/w20/pt.png">
+                                                    <span class="lang_text">Portuguese</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="ru">
+                                                    <img width="20" height="20" alt="ru"
+                                                        src="https://flagcdn.com/w20/ru.png">
+                                                    <span class="lang_text">Russian</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="es">
+                                                    <img width="20" height="20" alt="es"
+                                                        src="https://flagcdn.com/w20/es.png">
+                                                    <span class="lang_text">Spanish</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="hi">
+                                                    <img width="20" height="20" alt="hi"
+                                                        src="https://flagcdn.com/w20/in.png">
+                                                    <span class="lang_text">Hindi</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="zh-CN">
+                                                    <img width="20" height="20" alt="zh-CN"
+                                                        src="https://flagcdn.com/w20/cn.png">
+                                                    <span class="lang_text">Chinese (Simplified)</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="ja">
+                                                    <img width="20" height="20" alt="ja"
+                                                        src="https://flagcdn.com/w20/jp.png">
+                                                    <span class="lang_text">Japanese</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="ko">
+                                                    <img width="20" height="20" alt="ko"
+                                                        src="https://flagcdn.com/w20/kr.png">
+                                                    <span class="lang_text">Korean</span>
+                                                </a>
+                                                <a href="#" class="glink nturl" data-gt-lang="ar">
+                                                    <img width="20" height="20" alt="ar"
+                                                        src="https://flagcdn.com/w20/sa.png">
+                                                    <span class="lang_text">Arabic</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+
+            </li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- =======================second nav=================================== -->
+    <div class="second-navbar">
+        <div class="container-custom">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="https://placehold.co/160x45/00B5CA/white?text=eGov+Foundation" alt="eGov Foundation">
+                </div>
+                <div>
+                    <ul class="main-nav-links">
+                        <!-- About Us Dropdown -->
+                        <li>
+                            <a href="#">About Us <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="regular-dropdown">
+                                <li><a href="#">Who We Are</a></li>
+                                <li><a href="#">Our Impact</a></li>
+                                <li><a href="#">Our Approach</a></li>
+                                <li><a href="#">Our People</a></li>
+                                <li><a href="#">Awards & Recognition</a></li>
+                                <li><a href="#">Work with us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Areas of Work Dropdown -->
+                        <li>
+                            <a href="#">Areas of work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="regular-dropdown">
+                                <li><a href="#">Local Governance</a></li>
+                                <li><a href="#">Water & Sanitation</a></li>
+                                <li><a href="#">Public Health</a></li>
+                                <li><a href="#">Public Finance</a></li>
+                                <li><a href="#">Justice Delivery</a></li>
+                                <li><a href="#">Other Sectors</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Products & Solutions - Mega Menu -->
+                        <li>
+                            <a href="#">Products & Solutions <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-container">
+                                    <!-- First Column - Areas of work (Blue Background) -->
+                                    <div class="mega-col blue-bg">
+                                        <h4>Areas of work</h4>
+                                        <ul>
+                                            <li><a href="#">Local Governance</a></li>
+                                            <li><a href="#">Public Health</a></li>
+                                            <li><a href="#">Public Finance</a></li>
+                                            <li><a href="#">Water & Sanitation</a></li>
+                                            <li><a href="#">Justice Delivery</a></li>
+                                            <li><a href="#">Other Sectors</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Second Column - Citizen & Commercial Services -->
+                                    <div class="mega-col white-bg">
+                                        <h4>Citizen & Commercial Services</h4>
+                                        <ul>
+                                            <li><a href="#">Citizen Complaint Resolution System</a></li>
+                                            <li><a href="#">Residential Construction Permit System</a></li>
+                                            <li><a href="#">Water & Sewerage Connections</a></li>
+                                            <li><a href="#">Local Business License Issuing System</a></li>
+                                            <li><a href="#">Birth & Death Certificate Issuance</a></li>
+                                            <li><a href="#">Fire Safety Certification (NOC)</a></li>
+                                            <li><a href="#">Dashboards & Analytics</a></li>
+                                            <li><a href="#">Works Management</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Third Column - Revenue Mobilisation -->
+                                    <div class="mega-col white-bg">
+                                        <h4>Revenue Mobilisation</h4>
+                                        <ul>
+                                            <li><a href="#">Property Tax System</a></li>
+                                            <li><a href="#">mCollect (demand based revenue collection)</a></li>
+                                            <li><a href="#">Water Supply O&amp;M System</a></li>
+                                            <li><a href="#">Residential Construction Permit System</a></li>
+                                            <li><a href="#">Local Business License Issuing System</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Our Platform Dropdown -->
+                        <li>
+                            <a href="#">Our Platform <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="regular-dropdown">
+                                <li><a href="#">DIGIT</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Ecosystem Dropdown -->
+                        <li>
+                            <a href="#">Ecosystem <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="regular-dropdown">
+                                <li><a href="#">Partnerships</a></li>
+                                <li><a href="#">Academy</a></li>
+                                <li><a href="#">COE</a></li>
+                                <li><a href="#">Community</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Resources Dropdown -->
+                        <li>
+                            <a href="#">Resources <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="regular-dropdown">
+                                <li><a href="#">Articles</a></li>
+                                <li><a href="#">Whitepapers</a></li>
+                                <li><a href="#">Strategy papers</a></li>
+                                <li><a href="#">Case Studies</a></li>
+                                <li><a href="#">News & Media</a></li>
+                                <li><a href="#">Videos</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Content -->
+    <div class="demo-content" style="padding: 80px 20px; min-height: 100vh;">
+        <div class="container-custom">
+            <h1>Complete Navigation System</h1>
+            <p>✅ First navbar: Events & Contact us with dropdowns</p>
+            <p>✅ Second navbar: All main navigation items with proper dropdowns</p>
+            <p>✅ Products & Solutions has 3-column mega menu with blue background on first column</p>
+            <p>✅ Search icon at the end of navigation</p>
+            <p>✅ All dropdowns appear on hover with smooth animations</p>
+        </div>
+    </div>
+    <!-- ========================================================= -->
+
+    <!-- Hero Section -->
+    <!-- Hero Section with Full Background Image -->
+    <section class="hero-section">
+        <!-- Mobile image (visible only on mobile) -->
+        <!-- <div class="mobile-hero-image1">
+        <img src="assets/New-Home-Page-Banner-Image.png" alt="Hero Banner">
+    </div> -->
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="hero-title">
+                        20 years of digital transformation in<br>public service delivery
+                        <span class="scroll-underline visible-line">It's possible.</span>
+                    </h1>
+                    <p class="mt-4 mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.6;">
+                        Catalysts. Ecosystem enablers. Problem Solvers. At eGov, we're driven by the power of open
+                        digital infrastructure and ecosystems to enable governments deliver accessible, inclusive and
+                        transparent services to every citizen.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#" class="btn-style-1">Our Approach</a>
+                        <a href="#" class="btn-style-2">Our Impact</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <!-- Empty column - background image shows here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Stats Section with Impact Numbers -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="stat-number">1,000,000,000+</div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="stat-label">Citizens availing public services through eGov's Digital Public Goods (DPG)
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4">
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="stat-number">1.1 Billion+</div>
+                    <div class="stat-label">Public services delivered</div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="stat-number">50+ partners</div>
+                    <div class="stat-label">From technology, governments and NGOs</div>
+                </div>
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="stat-number">5 Sectors</div>
+                    <div class="stat-label">Local Governance, Water & Sanitation, Public Finance, Public Health</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Big Problems Need Bold Approaches Section -->
+    <section class="problems-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <h2 class="section-title">
+                        Big problems need <br>
+                        <strong>bold approaches</strong>
+                    </h2>
+                    <div class="nav nav-tabs-custom flex-column mt-4" id="problemTab" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#publicHealth">Public
+                            Health</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#publicFinance">Public
+                            Finance</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#localGovernance">Local
+                            Governance</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#waterSanitation">Water &
+                            Sanitation</button>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="publicHealth">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=ICU+Equipment"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">210+</div>
+                                            <p>cities LIVE with 10BedICU across India</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Vaccination"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">2 Bn</div>
+                                            <p>COVID-19 vaccination certificates issued</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="publicFinance">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Revenue+Management"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">5000+</div>
+                                            <p>rural local bodies managing revenue & expenditure</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Women+Empowerment"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">4000+</div>
+                                            <p>empowered women Self Help Groups</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="localGovernance">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Urban+Governance"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">70%</div>
+                                            <p>improved quality of life in Punjab, India</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Revenue+Mobilization"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">250%</div>
+                                            <p>increase in revenue mobilisation in Andhra Pradesh</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="waterSanitation">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Drinking+Water"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">148Mn</div>
+                                            <p>households with access to drinking water</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="grid-card">
+                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Sanitation"
+                                            class="w-100" alt="">
+                                        <div class="card-content">
+                                            <div class="card-number">DPI</div>
+                                            <p>for Sanitation: A reimagined approach</p>
+                                            <a href="#" class="btn-style-2 d-inline-block mt-2">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 20 Years Section -->
+    <section class="problems-section" style="background: #F8FAFC;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">
+                        20 years of reimagining for citizens and <br>
+                        <strong>sustaining change</strong>
+                    </h2>
+                    <p class="text-muted mt-4" style="line-height: 1.8;">
+                        Technology is powerful, but is only one piece of the puzzle, when it comes to enhancing the
+                        quality of life for every citizen. To have sustainable impact at scale, the collective energy of
+                        local networks to solve local problems needs to be tapped into. Our partners & networks bring
+                        this collective energy to life. The ecosystem already exists; our task is to facilitate and
+                        amplify their efforts. For 20 years, we've been turning small steps into lasting, meaningful
+                        change, so that no citizen is left behind.
+                    </p>
+                    <div class="mt-5">
+                        <a href="#" class="btn-style-1">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIGIT Platform Section -->
+    <section class="digit-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://placehold.co/150x50/FFFFFF/00B5CA?text=DIGIT" alt="DIGIT" class="digit-logo">
+                    <h2 class="section-title text-white">
+                        Our open source <br>
+                        <strong>technology-for-good platform</strong>
+                    </h2>
+                    <p class="mt-3 text-white-50">
+                        DIGIT, short for Digital Infrastructure for Governance, Inclusion and Transformation is eGov's
+                        open-source platform with reusable building blocks and shared data registries that can be used
+                        to build solutions in multiple sectors.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="btn-style-2" style="border-color: white; color: white;">Explore the
+                            platform</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://placehold.co/500x400/FFFFFF/00B5CA?text=DIGIT+Platform" alt="DIGIT Platform"
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest at eGov Section -->
+    <section class="latest-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Latest at <strong>eGov</strong></h2>
+            </div>
+
+            <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="resourceTab">
+                <li class="nav-item">
+                    <a class="nav-link active btn-style-2"
+                        style="background: var(--primary-blue); color: white; border: none;" data-bs-toggle="pill"
+                        href="#whatsnew">What's New</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#whitepapers">Whitepapers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#casestudies">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#newsmedia">News & Media</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="whatsnew">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://placehold.co/400x250/00B5CA/white?text=Whitepaper+Thumb" alt="">
+                                <div class="resource-body">
+                                    <span class="resource-tag">Whitepaper</span>
+                                    <h5>The Solver Network | A Policy Vision for Collaborative Public Problem-Solving
+                                    </h5>
+                                    <p class="text-muted small mt-2">07 Apr 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://placehold.co/400x250/00B5CA/white?text=Whitepaper+Thumb" alt="">
+                                <div class="resource-body">
+                                    <span class="resource-tag">Whitepaper</span>
+                                    <h5>State-led Urban Digital Transformation</h5>
+                                    <p class="text-muted small mt-2">13 Mar 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://placehold.co/400x250/00B5CA/white?text=Newsletter" alt="">
+                                <div class="resource-body">
+                                    <span class="resource-tag">Newsletter</span>
+                                    <h5>DOT - A DIGIT QUARTERLY NEWSLETTER</h5>
+                                    <p class="text-muted small mt-2">20 Jan 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="articles">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://placehold.co/400x250/00B5CA/white?text=Article" alt="">
+                                <div class="resource-body">
+                                    <span class="resource-tag">Article</span>
+                                    <h5>From Goa to the Globe: How Pravimal Abhishek led the GIDC</h5>
+                                    <p class="text-muted small mt-2">25 Jul 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://placehold.co/400x250/00B5CA/white?text=Article" alt="">
+                                <div class="resource-body">
+                                    <span class="resource-tag">Article</span>
+                                    <h5>Tech for Billions, Talent for None: Fixing GovTech's Biggest Gap</h5>
+                                    <p class="text-muted small mt-2">10 Mar 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card">
+                                <img src="https://placehold.co/400x250/00B5CA/white?text=Article" alt="">
+                                <div class="resource-body">
+                                    <span class="resource-tag">Article</span>
+                                    <h5>From Systems to Ecosystems: A Shared Journey to Build Digital Public Goods</h5>
+                                    <p class="text-muted small mt-2">10 Jan 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#" class="btn-style-1">See all</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supporters Section -->
+    <section class="supporters-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our <strong>Supporters</strong></h2>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-2 col-6 mb-4 text-center">
+                    <img src="https://placehold.co/120x60/1E293B/white?text=GOV" class="supporter-logo" alt="">
+                </div>
+                <div class="col-md-2 col-6 mb-4 text-center">
+                    <img src="https://placehold.co/120x60/1E293B/white?text=Bill+Minds" class="supporter-logo" alt="">
+                </div>
+                <div class="col-md-2 col-6 mb-4 text-center">
+                    <img src="https://placehold.co/120x60/1E293B/white?text=TATA+Trusts" class="supporter-logo" alt="">
+                </div>
+                <div class="col-md-2 col-6 mb-4 text-center">
+                    <img src="https://placehold.co/120x60/1E293B/white?text=Global+Fund" class="supporter-logo" alt="">
+                </div>
+                <div class="col-md-2 col-6 mb-4 text-center">
+                    <img src="https://placehold.co/120x60/1E293B/white?text=Nandan+Nilekani" class="supporter-logo"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="https://placehold.co/200x50/FFFFFF/00B5CA?text=eGov+Foundation" alt="eGov Foundation"
+                        style="max-width: 180px; margin-bottom: 20px;">
+                    <p class="text-muted">Catalysing digital transformation in public service delivery at speed & scale.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Useful Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Our Impact</a></li>
+                        <li><a href="#">DIGIT Sandbox</a></li>
+                        <li><a href="#">Our People</a></li>
+                        <li><a href="#">Financials</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Subscribe Now</h5>
+                    <p class="text-muted small">Receive regular updates of our monthly newsletter DOT - in your inbox.
+                    </p>
+                    <input type="email" class="newsletter-input" placeholder="Enter Your Email">
+                    <button class="btn-subscribe w-100">SUBSCRIBE</button>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="background: #1E293B;">
+            <div class="text-center">
+                <p class="text-muted mb-0">©2024. eGov. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hero-title, .stat-number, .section-title, .resource-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- ===================first navbar script========================== -->
+
+    <!-- ========================first navbar script end================== -->
+
+</body>
+
+</html>
