@@ -636,7 +636,7 @@
         /* Hero Section - Exact match to eGov.org.in */
         .hero-section {
             position: relative;
-            min-height: 100vh;
+            min-height: 110vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
@@ -651,7 +651,7 @@
             top: 0;
             right: 0;
             bottom: 0;
-            width: 50%;
+            width: 100%;
             background-image: url('assets/New-Home-Page-Banner-Image.png');
             background-size: contain;
             background-position: right center;
@@ -673,8 +673,8 @@
         }
 
         .hero-title {
-            font-size: 3rem;
-            font-weight: 500;
+            font-size: 43px;
+            font-weight: 200;
             line-height: 1.2;
             color: var(--text-dark);
             position: relative;
@@ -682,6 +682,7 @@
         }
 
         .hero-title span {
+            font-size: 65px;
             font-weight: 700;
             position: relative;
             display: inline-block;
@@ -693,23 +694,11 @@
 
         .scroll-underline {
             position: relative;
-        }
-
-        .scroll-underline::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--primary-blue);
-            transform: scaleX(0);
-            transition: transform 0.6s ease;
-            transform-origin: left;
-        }
-
-        .scroll-underline.visible-line::after {
-            transform: scaleX(1);
+            display: inline-block;
+            background-image: url('assets/animate-bg1t.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
         }
 
         .btn-style-1 {
@@ -733,11 +722,12 @@
 
         .btn-style-2 {
             background: transparent;
-            color: var(--primary-blue);
-            padding: 12px 28px;
-            border-radius: 40px;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 50px;
             font-weight: 500;
-            border: 1px solid var(--primary-blue);
+            font-size: 14px;
+            border: 1px solid black;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
@@ -754,6 +744,7 @@
         /* Optional: Add a subtle overlay to ensure text readability if needed */
         .hero-section .col-lg-7 {
             position: relative;
+            width: 50%;
             z-index: 2;
         }
 
@@ -767,12 +758,14 @@
         /* =================Hero section end======================= */
 
         /* Stats Section with Background Image */
+        /* Stats Section */
         .stats-section {
-            background-image: url('https://placehold.co/1920x600/1E293B/white?text=Background+Map');
+            background-image: url('https://egov.org.in/wp-content/themes/egov/assets/images/home-2sec.jpeg');
             background-size: cover;
             background-position: center;
             position: relative;
             padding: 80px 0;
+            z-index: 1;
         }
 
         .stats-section::before {
@@ -784,13 +777,20 @@
         }
 
         .stats-section .container {
+            height: 500px;
             position: relative;
             z-index: 2;
         }
 
         .stat-number {
-            font-size: 4rem;
-            font-weight: 600;
+            font-size: 40px;
+            font-weight: 300;
+            color: white;
+        }
+
+        .stat-big-number {
+            font-size: 6rem;
+            font-weight: 300;
             color: white;
         }
 
@@ -801,8 +801,17 @@
 
         /* Big Problems Section */
         .problems-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: white;
+            position: relative;
+            z-index: 2;
+            margin-top: -50px;
+            /* Overlap by 50px */
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .section-title {
@@ -821,8 +830,7 @@
         }
 
         .nav-tabs-custom .nav-link {
-            background: #F1F5F9;
-            border: none;
+            border: solid 1px;
             border-radius: 40px;
             padding: 12px 24px;
             color: var(--text-dark);
@@ -831,32 +839,140 @@
         }
 
         .nav-tabs-custom .nav-link.active {
-            background: var(--primary-blue);
+            background: #1577bd;
             color: white;
         }
 
+        /* ==================================== */
         .grid-card {
-            background: white;
+            height: 100%;
+            background: #00B5CA;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 20px;
             transition: transform 0.3s ease;
+            position: relative;
+            min-height: 280px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
+
+        /* Content overlay on TOP-LEFT side */
+        .grid-card .card-content {
+            position: absolute;
+            top: 0;
+            /* Changed from bottom to top */
+            left: 0;
+            right: auto;
+            /* Changed from right: 0 */
+            padding: 25px;
+            color: black;
+            border-radius: 20px;
+            width: 100%;
+        }
+
 
         .grid-card:hover {
             transform: translateY(-5px);
         }
 
-        .grid-card .card-content {
-            padding: 25px;
-        }
 
         .grid-card .card-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-blue);
             margin-bottom: 10px;
+        }
+
+        /* ===================third card================= */
+        /* Custom card with img tag visible */
+        .custom-grid-card {
+            height: 100%;
+            background: #2b97ed;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .custom-grid-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 100;
+            /* Makes image partially transparent, showing background color through */
+        }
+
+        .custom-grid-card .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background-color: transparent;
+            /* Transparent so image shows */
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .custom-grid-card .card-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .custom-grid-card .card-content p {
+            color: white;
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .custom-grid-card .btn-style-2 {
+            background: white;
+            color: #00B5CA;
+            border: none;
+            padding: 8px 20px;
+            font-size: 12px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .custom-grid-card .btn-style-2:hover {
+            background: #FFD700;
+            color: #1E293B;
+            transform: translateY(-2px);
+        }
+
+
+        /* For tablets */
+        @media (max-width: 768px) {
+            .problems-section {
+                margin-top: -30px;
+                /* Smaller overlap on mobile */
+                padding: 60px 0;
+            }
+        }
+
+        /* For mobile devices */
+        @media (max-width: 480px) {
+            .problems-section {
+                margin-top: -20px;
+                /* Even smaller overlap on very small screens */
+                padding: 40px 0;
+            }
         }
 
         /* DIGIT Platform Section */
@@ -1008,9 +1124,6 @@
                 font-size: 2rem;
             }
 
-            .stat-number {
-                font-size: 2.5rem;
-            }
 
             .section-title {
                 font-size: 1.75rem;
@@ -1057,18 +1170,10 @@
                             <span class="screen-reader-text">Main Menu</span>
                             <div class="uael-nav-menu-icon"></div>
                         </div>
+
                         <nav class="uael-nav-menu__layout-horizontal uael-nav-menu__submenu-arrow" data-toggle-icon=""
                             data-close-icon="" data-full-width="">
-                            <!-- ===================================icon============ -->
-                            <div class="elementor-widget-container">
-                                <a href="https://egov.org.in">
-                                    <img fetchpriority="high" width="30px" height="30px"
-                                        src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png"
-                                        class="attachment-large size-large wp-image-194887" alt="eGov-Foundation"
-                                        srcset="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png 861w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-300x114.png 300w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-768x291.png 768w"
-                                        sizes="(max-width: 861px) 100vw, 861px"> </a>
-                            </div>
-                            <!-- ================================================ -->
+
                             <ul class="uael-nav-menu uael-nav-menu-custom uael-custom-wrapper">
                                 <!-- Events Menu Item -->
                                 <li class="menu-item menu-item-has-children parent parent-has-no-child"
@@ -1214,9 +1319,16 @@
     <div class="second-navbar">
         <div class="container-custom">
             <div class="nav-wrapper">
-                <div class="logo">
-                    <img src="https://placehold.co/160x45/00B5CA/white?text=eGov+Foundation" alt="eGov Foundation">
+                <!-- ===================================icon============ -->
+                <div class="elementor-widget-container">
+                    <a href="https://egov.org.in">
+                        <img fetchpriority="high" width="70px" height="50px"
+                            src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png"
+                            class="attachment-large size-large wp-image-194887" alt="eGov-Foundation"
+                            srcset="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png 861w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-300x114.png 300w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-768x291.png 768w"
+                            sizes="(max-width: 861px) 100vw, 861px"> </a>
                 </div>
+                <!-- ================================================ -->
                 <div>
                     <ul class="main-nav-links">
                         <!-- About Us Dropdown -->
@@ -1326,26 +1438,17 @@
                                 <li><a href="#">Newsletters</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <div>
+                                <i class="fas fa-search search-icon"></i>
+                            </div>
+                        </li>
                     </ul>
-                </div>
-                <div>
-                    <i class="fas fa-search search-icon"></i>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Demo Content -->
-    <div class="demo-content" style="padding: 80px 20px; min-height: 100vh;">
-        <div class="container-custom">
-            <h1>Complete Navigation System</h1>
-            <p>✅ First navbar: Events & Contact us with dropdowns</p>
-            <p>✅ Second navbar: All main navigation items with proper dropdowns</p>
-            <p>✅ Products & Solutions has 3-column mega menu with blue background on first column</p>
-            <p>✅ Search icon at the end of navigation</p>
-            <p>✅ All dropdowns appear on hover with smooth animations</p>
-        </div>
-    </div>
     <!-- ========================================================= -->
 
     <!-- Hero Section -->
@@ -1363,14 +1466,14 @@
                         20 years of digital transformation in<br>public service delivery
                         <span class="scroll-underline visible-line">It's possible.</span>
                     </h1>
-                    <p class="mt-4 mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.6;">
+                    <p class="mt-4 mb-4 text-muted" style=" width: 64%;font-size: 1.1rem; line-height: 1.6;">
                         Catalysts. Ecosystem enablers. Problem Solvers. At eGov, we're driven by the power of open
                         digital infrastructure and ecosystems to enable governments deliver accessible, inclusive and
                         transparent services to every citizen.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="#" class="btn-style-1">Our Approach</a>
-                        <a href="#" class="btn-style-2">Our Impact</a>
+                        <a href="https://egov.org.in/about-us/our-approach/" class="btn-style-1">Our Approach</a>
+                        <a href="https://egov.org.in/about-us/our-impact/" class="btn-style-2">Our Impact</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -1386,7 +1489,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <div class="stat-number">1,000,000,000+</div>
+                    <div class="stat-big-number">1,000,000,000+</div>
                 </div>
                 <div class="col-lg-4">
                     <div class="stat-label">Citizens availing public services through eGov's Digital Public Goods (DPG)
@@ -1436,7 +1539,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="grid-card">
-                                        <img src="https://placehold.co/400x250/00B5CA/white?text=ICU+Equipment"
+                                        <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/ICU-Equipment.G16.2k-1-3.png"
                                             class="w-100" alt="">
                                         <div class="card-content">
                                             <div class="card-number">210+</div>
@@ -1446,8 +1549,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="grid-card">
-                                        <img src="https://placehold.co/400x250/00B5CA/white?text=Vaccination"
+                                    <!-- Custom Card with separate styling -->
+                                    <div class="custom-grid-card">
+                                        <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/10/covid-vaccine-1.png"
                                             class="w-100" alt="">
                                         <div class="card-content">
                                             <div class="card-number">2 Bn</div>
