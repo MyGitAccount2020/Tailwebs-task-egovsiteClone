@@ -1,0 +1,242 @@
+.footer {
+  background-color: #E6F3FB;
+  color: #1E293B;
+  padding: 60px 0 30px;
+  position: relative;
+}
+
+.footer-logo {
+  max-width: 180px;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  color: #2047be;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background: #00B5CA;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer h5 {
+  color: #1E293B;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00B5CA;
+}
+
+.useful-links-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.useful-links-grid .footer-links {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.newsletter-text {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.newsletter-wrapper {
+  width: 100%;
+}
+
+.newsletter-form {
+  width: 100%;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 12px 35px 12px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #1E293B;
+  background-color: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #00B5CA;
+  box-shadow: 0 0 0 3px rgba(0, 181, 202, 0.1);
+}
+
+.newsletter-input::placeholder {
+  color: #94A3B8;
+  font-size: 14px;
+}
+
+.newsletter-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: #F58522;
+  background-image: url('https://egov.org.in/wp-content/themes/egov/assets/images/email_.png');
+  background-size: 14px 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #E0761A;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.footer-bottom {
+  background-color: #1577DD;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.copyright-text {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+  padding: 15px 0 15px 20px;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 20px 15px 0;
+}
+
+.footer-legal-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+  color: #00B5CA;
+}
+
+.separator-dot {
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-legal-links {
+    justify-content: center;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .footer-description {
+    text-align: center;
+  }
+  
+  .footer h5 {
+    text-align: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .useful-links-grid {
+    gap: 15px;
+  }
+  
+  .copyright-text {
+    padding: 15px 0 5px 0;
+  }
+  
+  .footer-legal-links {
+    padding: 5px 0 15px 0;
+  }
+}

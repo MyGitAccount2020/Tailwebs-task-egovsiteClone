@@ -1,0 +1,101 @@
+.stats-section {
+  background-image: url('https://egov.org.in/wp-content/themes/egov/assets/images/home-2sec.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 700px;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.stats-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.stats-section .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 500px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.top-stats-row {
+  align-self: start;
+  margin-top: 60px;
+}
+
+.bottom-stats-row {
+  align-self: end;
+  margin-bottom: 60px;
+}
+
+.stat-big-number {
+  font-size: 5rem;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .stat-big-number {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stats-section {
+    padding: 40px 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stat-big-number {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  
+  .top-stats-row {
+    margin-bottom: 40px;
+  }
+  
+  .bottom-stats-row .col-lg-4 {
+    margin-bottom: 25px;
+  }
+}

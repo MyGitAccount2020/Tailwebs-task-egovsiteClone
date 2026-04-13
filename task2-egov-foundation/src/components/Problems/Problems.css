@@ -1,0 +1,155 @@
+.problems-section {
+  padding: 60px 0;
+  background: white;
+  position: relative;
+  z-index: 2;
+  margin-top: -50px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-dark);
+}
+
+.section-title strong {
+  font-weight: 700;
+}
+
+.nav-tabs-custom {
+  border: none;
+  gap: 15px;
+}
+
+.nav-tabs-custom .nav-link {
+  border: solid 1px;
+  border-radius: 40px;
+  padding: 12px 24px;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-tabs-custom .nav-link.active {
+  background: #1577bd;
+  color: white;
+}
+
+.grid-card {
+  height: 100%;
+  background: #00B5CA;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  position: relative;
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid-card .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25px;
+  color: black;
+  width: 100%;
+}
+
+.grid-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-grid-card {
+  height: 100%;
+  background: #2b97ed;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.custom-grid-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.custom-grid-card .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 25px;
+  background-color: transparent;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.custom-grid-card .card-number {
+  color: white;
+}
+
+.custom-grid-card .card-content p {
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.custom-grid-card .btn-style-2 {
+  background: white;
+  color: #00B5CA;
+  border: none;
+  padding: 8px 20px;
+  font-size: 12px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.custom-grid-card .btn-style-2:hover {
+  background: #FFD700;
+  color: #1E293B;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .problems-section {
+    margin-top: -30px;
+    padding: 60px 0;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .problems-section {
+    margin-top: -20px;
+    padding: 40px 0;
+  }
+}

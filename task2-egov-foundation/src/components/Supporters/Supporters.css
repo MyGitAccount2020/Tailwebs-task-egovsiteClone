@@ -1,0 +1,33 @@
+.supporters-section {
+  padding: 60px 0;
+  background: white;
+}
+
+.section-title-our-supporters1 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 200;
+  font-size: 45px;
+  color: #0E165D;
+}
+
+.section-title-our-supporters2 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  color: #0E165D;
+}
+
+.supporter-logo {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  height: 80px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.supporter-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}

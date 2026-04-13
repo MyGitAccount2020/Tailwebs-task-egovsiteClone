@@ -1,0 +1,45 @@
+.digit-section {
+  position: relative;
+  background-image: url('https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/10/digit-n.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  color: white;
+  z-index: 1;
+}
+
+.digit-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 100%);
+  z-index: -1;
+}
+
+.digit-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.btn-style-5 {
+  background: white;
+  color: #212529;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-style-5:hover {
+  background: #00B5CA;
+  color: white;
+  transform: translateY(-2px);
+}
