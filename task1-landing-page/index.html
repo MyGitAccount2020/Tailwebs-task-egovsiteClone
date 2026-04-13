@@ -13,7 +13,13 @@
     <!-- Google Fonts - DM Sans -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
+    <!-- ================Google font===================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- ================================================= -->
     <style>
         * {
             margin: 0;
@@ -51,7 +57,7 @@
             background-color: #E6F3FB;
             /* Light blue background */
             z-index: 1001;
-            padding: 8px 0;
+            padding: 0 0;
             margin: 0;
             box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
             display: flex;
@@ -81,7 +87,7 @@
             align-items: center;
             width: 83%;
             margin-left: auto;
-            margin-right: 0;
+            margin-right: 8%;
             position: relative;
             padding: 0;
         }
@@ -641,7 +647,7 @@
             align-items: center;
             background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
             overflow: hidden;
-            padding: 120px 0 80px;
+            padding: 10% 0 80px;
         }
 
         /* Background Image - positioned on right side */
@@ -674,7 +680,8 @@
 
         .hero-title {
             font-size: 43px;
-            font-weight: 200;
+            width: 70%;
+            font-weight: 400;
             line-height: 1.2;
             color: var(--text-dark);
             position: relative;
@@ -758,48 +765,134 @@
         /* =================Hero section end======================= */
 
         /* Stats Section with Background Image */
-        /* Stats Section */
+        /* =========================================== */
+        /* STATS SECTION WITH BACKGROUND IMAGE */
+        /* =========================================== */
+
         .stats-section {
             background-image: url('https://egov.org.in/wp-content/themes/egov/assets/images/home-2sec.jpeg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             position: relative;
-            padding: 80px 0;
+            height: 700px;
+            display: grid;
+            place-items: center;
             z-index: 1;
         }
 
         .stats-section::before {
             content: "";
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
 
         .stats-section .container {
-            height: 500px;
             position: relative;
             z-index: 2;
+            width: 100%;
+            min-height: 500px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            /* Top, flexible middle, bottom */
+        }
+
+        .top-stats-row {
+            align-self: start;
+            margin-top: 60px;
+        }
+
+        .bottom-stats-row {
+            align-self: end;
+            margin-bottom: 60px;
+        }
+
+        /* Stat Number Styling */
+        .stat-big-number {
+            font-size: 5rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .stat-number {
-            font-size: 40px;
+            font-size: 2.5rem;
             font-weight: 300;
             color: white;
-        }
-
-        .stat-big-number {
-            font-size: 6rem;
-            font-weight: 300;
-            color: white;
+            margin-bottom: 10px;
         }
 
         .stat-label {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 1rem;
+            line-height: 1.4;
         }
 
-        /* Big Problems Section */
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .stat-big-number {
+                font-size: 3.5rem;
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stats-section {
+                padding: 40px 0 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-big-number {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+                text-align: center;
+            }
+
+            .top-stats-row {
+                margin-bottom: 40px;
+            }
+
+            .bottom-stats-row .col-lg-4 {
+                margin-bottom: 25px;
+            }
+        }
+
+        /* Optional: Add animation for stats */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-big-number,
+        .stat-number {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ----------------Big Problems Section------------------------ */
         .problems-section {
             padding: 60px 0;
             background: white;
@@ -975,16 +1068,145 @@
             }
         }
 
+        /* ================================20 years section========================= */
+        /* =========================================== */
+        /* SUSTAINING CHANGE - WITH BACKGROUND IMAGE */
+        /* =========================================== */
+        /* Section Title - Exact match to original */
+        .section-title-20years {
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            color: #0E165D;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 0;
+            visibility: visible;
+        }
+
+        /* Text style 2 - For the highlighted text (exact match) */
+        .text-style-2 {
+            font-weight: 700;
+        }
+
+        /* Scroll underline wrapper - exact match to original */
+        .scroll-underline {
+            position: relative;
+            display: inline-block;
+            background-image: url('assets/animate-bg1t.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position:center;
+            padding-bottom: 0px;
+            cursor: pointer;
+        }
+
+        /* Animation class that matches original */
+        .scroll-underline.visible-line {
+            animation: underlineFadeIn 0.8s ease-out;
+        }
+
+        @keyframes underlineFadeIn {
+            from {
+                background-position: bottom -20px center;
+                opacity: 0;
+            }
+
+            to {
+                background-position: bottom center;
+                opacity: 1;
+            }
+        }
+
+        /* Responsive font size */
+        @media (max-width: 768px) {
+            .section-title-20years {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title-20years {
+                font-size: 24px;
+            }
+        }
+
+        .btn-style-3 {
+            color: black;
+            border: solid 1px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ========================================================================= */
         /* DIGIT Platform Section */
+        /* DIGIT Platform Section - With Background Image */
         .digit-section {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            position: relative;
+            background-image: url('https://-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/10/digit-n.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 80px 0;
+            color: white;
+            z-index: 1;
+        }
+
+        /* Dark overlay for text readability */
+        .digit-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 100%);
+            z-index: -1;
+        }
+
+
+
+        /* No overlay needed if image is subtle */
+        .digit-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
             color: white;
         }
 
-        .digit-logo {
-            width: 150px;
-            margin-bottom: 20px;
+        .section-title strong {
+            font-weight: 700;
+        }
+
+        /* Button styling */
+        .btn-style-5 {
+            background: white;
+            color: #212529;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            border: 1px solid white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-style-2:hover {
+            background: white;
+            color: #00B5CA;
+            transform: translateY(-2px);
         }
 
         /* Latest at eGov Section */
@@ -1007,10 +1229,71 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
+        /* =========================================== */
+        /* LATEST AT EGOV SECTION - UNIQUE STYLES */
+        /* =========================================== */
+
+        /* Container class for the heading */
+        .latest-heading-wrapper {
+            margin-bottom: 3rem;
+        }
+
+        /* Style for "Latest at" text */
+        .latest-heading-light {
+            font-family: 'DM Sans', sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            color: #0E165D;
+            line-height: 1.2;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Style for "eGov" text */
+        .latest-heading-bold {
+            font-weight: 700;
+            color: #0E165D;
+        }
+
+        /* Alternative: Combined class for the entire heading */
+        .latest-at-egov-title {
+            font-family: 'DM Sans', sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            color: #0E165D;
+            line-height: 1.2;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .latest-at-egov-title strong {
+            font-weight: 700;
+        }
+
+        /* Responsive font size */
+        @media (max-width: 768px) {
+
+            .latest-heading-light,
+            .latest-at-egov-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .latest-heading-light,
+            .latest-at-egov-title {
+                font-size: 1.75rem;
+            }
+        }
+
         .resource-card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 300px;
+            position: relative;
+
         }
 
         .resource-body {
@@ -1020,13 +1303,59 @@
         .resource-tag {
             display: inline-block;
             padding: 4px 12px;
-            background: #EEF2FF;
-            color: var(--primary-blue);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
+            background: white;
+            color: #0e165d;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 400;
             margin-bottom: 12px;
+            box-sizing: border-box;
         }
+
+
+        .dot-style-2 {
+            width: 6px;
+            height: 6px;
+            background-color: #0e165d;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .text-style-6 {
+            font-size: 12px;
+            color: #1E293B;
+        }
+
+        .blue-2 {
+            color: #0e165d;
+        }
+
+        .ms-2 {
+            margin-left: 8px;
+        }
+
+        .ms-1 {
+            margin-left: 4px;
+        }
+
+        .me-3 {
+            margin-right: 16px;
+        }
+
+        .gap-3 {
+            gap: 16px;
+        }
+
+        .list-unstyled {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+
 
         /* Supporters Section */
         .supporters-section {
@@ -1034,11 +1363,28 @@
             background: white;
         }
 
+        .section-title-our-supporters1 {
+            font-family: "DM Sans", sans-serif;
+            font-weight: 200;
+            font-size: 45px;
+            color: #0E165D;
+        }
+
+        .section-title-our-supporters2 {
+            font-family: "DM Sans", sans-serif;
+            font-weight: 600;
+            font-size: 45px;
+            color: #0E165D;
+        }
+
+
+
         .supporter-logo {
             filter: grayscale(100%);
             opacity: 0.6;
             transition: all 0.3s ease;
-            max-height: 60px;
+            height: 150px;
+            width: auto;
         }
 
         .supporter-logo:hover {
@@ -1046,21 +1392,69 @@
             opacity: 1;
         }
 
-        /* Footer */
+        /* ==================Footer==================== */
+        /* =========================================== */
+        /* FOOTER SECTION - MATCHING eGov.org.in */
+        /* =========================================== */
+
         .footer {
-            background: #0F172A;
-            color: #94A3B8;
+            background-color: #E6F3FB;
+            color: #1E293B;
             padding: 60px 0 30px;
+            position: relative;
         }
 
-        .footer h5 {
-            color: white;
+        /* Footer Logo */
+        .footer-logo {
+            max-width: 180px;
             margin-bottom: 20px;
         }
 
+        .footer-description {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            color: #2047be;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #00B5CA;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer Headings */
+        .footer h5 {
+            color: #1E293B;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Links */
         .footer-links {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .footer-links li {
@@ -1068,96 +1462,332 @@
         }
 
         .footer-links a {
-            color: #94A3B8;
+            color: #475569;
             text-decoration: none;
+            font-size: 14px;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--primary-blue);
+            color: #00B5CA;
         }
 
-        .social-icons a {
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 36px;
-            color: white;
-            margin-right: 10px;
-            transition: all 0.3s ease;
+        /* Newsletter Section */
+        .newsletter-text {
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
-        .social-icons a:hover {
-            background: var(--primary-blue);
-            transform: translateY(-3px);
+        /* ================== */
+        /* =========================================== */
+        /* NEWSLETTER FORM - BUTTON INSIDE INPUT */
+        /* =========================================== */
+
+        .newsletter-text {
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-wrapper {
+            width: 100%;
+        }
+
+        .newsletter-form {
+            width: 100%;
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
 
         .newsletter-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            padding: 12px 15px;
-            border-radius: 40px;
-            color: white;
             width: 100%;
+            padding: 12px 35px 12px 18px;
+            /* Adjusted right padding for button */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #1E293B;
+            background-color: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #00B5CA;
+            box-shadow: 0 0 0 3px rgba(0, 181, 202, 0.1);
         }
 
         .newsletter-input::placeholder {
             color: #94A3B8;
+            font-size: 14px;
         }
 
-        .btn-subscribe {
-            background: var(--primary-blue);
+        .newsletter-button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            padding: 0;
+            background: #F58522;
+            background-image: url('https://egov.org.in/wp-content/themes/egov/assets/images/email_.png');
+            background-size: 14px 14px;
+            background-position: center;
+            background-repeat: no-repeat;
             border: none;
-            padding: 12px 24px;
-            border-radius: 40px;
-            color: white;
-            font-weight: 500;
-            margin-top: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background-color: #E0761A;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .newsletter-input {
+                padding: 10px 35px 10px 15px;
+                font-size: 13px;
+            }
+
+            .newsletter-button {
+                width: 26px;
+                height: 26px;
+                background-size: 12px 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-input {
+                padding: 10px 35px 10px 15px;
+            }
+        }
+
+        /* =========================================== */
+        /* FOOTER STYLES */
+        /* =========================================== */
+
+        .footer {
+            background-color: #E6F3FB;
+            color: #1E293B;
+            padding: 60px 0 30px;
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer h5 {
+            color: #1E293B;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #475569;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00B5CA;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a svg {
+            width: 16px;
+            height: 16px;
+            fill: #1E293B;
+            transition: fill 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #00B5CA;
+            transform: translateY(-3px);
+        }
+
+        .social-icons a:hover svg {
+            fill: white;
+        }
+
+        /* ====================column 2============ */
+        /* Useful Links Grid Layout */
+        .useful-links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .useful-links-grid .footer-links {
+            margin: 0;
+            padding: 0;
+        }
+
+        .useful-links-grid .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        /* Alternative using Flexbox */
+        .useful-links-grid {
+            display: flex;
+            gap: 30px;
+        }
+
+        .useful-links-grid .footer-links {
+            flex: 1;
+            margin: 0;
+            padding: 0;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
+            .useful-links-grid {
+                gap: 15px;
             }
 
+            .useful-links-grid .footer-links li {
+                text-align: center;
+            }
+        }
 
-            .section-title {
-                font-size: 1.75rem;
+        /* ======================================= */
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding-top: 30px;
+            margin-top: 0px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .copyright-text {
+            color: white;
+            font-size: 16px;
+            margin: 0;
+            padding-left: 10%;
+            padding-bottom: 10px;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding-right: 10%;
+            padding-bottom: 10px;
+        }
+
+        .footer-legal-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal-links a:hover {
+            color: #00B5CA;
+        }
+
+        .separator-dot {
+            width: 4px;
+            height: 4px;
+            background-color: #475569;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 40px 0 20px;
             }
 
-            .nav-tabs-custom {
+            .footer-bottom-content {
                 flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal-links {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-description {
+                text-align: center;
+            }
+
+            .footer h5 {
+                text-align: center;
+            }
+
+            .footer-links {
+                text-align: center;
             }
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
+        /* ============================================== */
     </style>
 </head>
 
 <body>
     <!-- ====================First nav=============================== -->
-    <!-- =========================================== -->
-    <!-- EXACT MATCH - TOP NAVBAR FROM eGov.org.in -->
-    <!-- =========================================== -->
     <div class="elementor-element-c58f992 e-con-full e-flex e-con-e-child"
         data-settings='{"background_background":"classic"}'>
         <div class="elementor-element-09f5fe9 e-con-full e-flex e-con-e-child">
@@ -1322,7 +1952,7 @@
                 <!-- ===================================icon============ -->
                 <div class="elementor-widget-container">
                     <a href="https://egov.org.in">
-                        <img fetchpriority="high" width="70px" height="50px"
+                        <img fetchpriority="high" width="120px" height="40px" style="margin-top: 10px;"
                             src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png"
                             class="attachment-large size-large wp-image-194887" alt="eGov-Foundation"
                             srcset="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png 861w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-300x114.png 300w, https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation-768x291.png 768w"
@@ -1487,27 +2117,32 @@
     <!-- Stats Section with Impact Numbers -->
     <section class="stats-section">
         <div class="container">
-            <div class="row align-items-center">
+            <!-- Top Row with Big Number -->
+            <div class="row top-stats-row">
                 <div class="col-lg-8">
                     <div class="stat-big-number">1,000,000,000+</div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="stat-label">Citizens availing public services through eGov's Digital Public Goods (DPG)
+                    <div class="stat-label">
+                        Citizens availing public services through eGov's Digital Public Goods (DPG)
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 pt-4">
-                <div class="col-lg-4 text-center mb-4">
+
+            <!-- Bottom Row with Stats - This will move down when height increases -->
+            <div class="row bottom-stats-row">
+                <div class="col-lg-4 text-center">
                     <div class="stat-number">1.1 Billion+</div>
                     <div class="stat-label">Public services delivered</div>
                 </div>
-                <div class="col-lg-4 text-center mb-4">
+                <div class="col-lg-4 text-center">
                     <div class="stat-number">50+ partners</div>
                     <div class="stat-label">From technology, governments and NGOs</div>
                 </div>
-                <div class="col-lg-4 text-center mb-4">
+                <div class="col-lg-4 text-center">
                     <div class="stat-number">5 Sectors</div>
-                    <div class="stat-label">Local Governance, Water & Sanitation, Public Finance, Public Health</div>
+                    <div class="stat-label">Local Governance, Water &amp; Sanitation, Public Finance, Public Health
+                    </div>
                 </div>
             </div>
         </div>
@@ -1651,10 +2286,17 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="section-title">
-                        20 years of reimagining for citizens and <br>
-                        <strong>sustaining change</strong>
+                    <!-- ----------------------- -->
+                    <h2 class="section-title-20years sl-fade"
+                        style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 0.8s ease-in-out 0.8s, transform 0.8s ease-in-out 0.8s;">
+                        20 years of reimagining for citizens and
+                        <span class="text-style-2 fw-700">
+                            <span class="scroll-underline visible-line" data-animated="true">
+                                sustaining change
+                            </span>
+                        </span>
                     </h2>
+                    <!-- ------------------------ -->
                     <p class="text-muted mt-4" style="line-height: 1.8;">
                         Technology is powerful, but is only one piece of the puzzle, when it comes to enhancing the
                         quality of life for every citizen. To have sustainable impact at scale, the collective energy of
@@ -1664,7 +2306,7 @@
                         change, so that no citizen is left behind.
                     </p>
                     <div class="mt-5">
-                        <a href="#" class="btn-style-1">About Us</a>
+                        <a href="#" class="btn-style-3">About Us</a>
                     </div>
                 </div>
             </div>
@@ -1676,7 +2318,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="https://placehold.co/150x50/FFFFFF/00B5CA?text=DIGIT" alt="DIGIT" class="digit-logo">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/10/digit-n.png"
+                        alt="DIGIT" class="digit-logo">
                     <h2 class="section-title text-white">
                         Our open source <br>
                         <strong>technology-for-good platform</strong>
@@ -1687,13 +2330,13 @@
                         to build solutions in multiple sectors.
                     </p>
                     <div class="mt-4">
-                        <a href="#" class="btn-style-2" style="border-color: white; color: white;">Explore the
+                        <a href="#" class="btn-style-5">Explore the
                             platform</a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://placehold.co/500x400/FFFFFF/00B5CA?text=DIGIT+Platform" alt="DIGIT Platform"
-                        class="img-fluid">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/12/22154549/DIGIT-Image-Only.png"
+                        alt="DIGIT Platform" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -1702,27 +2345,33 @@
     <!-- Latest at eGov Section -->
     <section class="latest-section">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Latest at <strong>eGov</strong></h2>
+            <div class="latest-heading-wrapper">
+                <h2 class="latest-heading-light">
+                    Latest at <strong class="latest-heading-bold">eGov</strong>
+                </h2>
             </div>
 
-            <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="resourceTab">
+            <ul class="nav nav-pills mb-5 gap-2" id="resourceTab">
                 <li class="nav-item">
                     <a class="nav-link active btn-style-2"
-                        style="background: var(--primary-blue); color: white; border: none;" data-bs-toggle="pill"
-                        href="#whatsnew">What's New</a>
+                        style="background: var(--primary-blue); color: white; border: none; border-radius: 20px;"
+                        data-bs-toggle="pill" href="#whatsnew">What's New</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#articles">Articles</a>
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#articles"
+                        style="border-radius: 20px;">Articles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#whitepapers">Whitepapers</a>
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#whitepapers"
+                        style="border-radius: 20px;">Whitepapers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#casestudies">Case Studies</a>
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#casestudies"
+                        style="border-radius: 20px;">Case Studies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#newsmedia">News & Media</a>
+                    <a class="nav-link btn-style-2" data-bs-toggle="pill" href="#newsmedia"
+                        style="border-radius: 20px;">News & Media</a>
                 </li>
             </ul>
 
@@ -1730,34 +2379,92 @@
                 <div class="tab-pane fade show active" id="whatsnew">
                     <div class="row">
                         <div class="col-md-4 mb-4">
-                            <div class="resource-card">
-                                <img src="https://placehold.co/400x250/00B5CA/white?text=Whitepaper+Thumb" alt="">
+                            <div class="resource-card" style="background-color: #e6f3fb;">
+                                <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2026/04/07105155/solvernetwork-thumb.webp"
+                                    alt="">
                                 <div class="resource-body">
-                                    <span class="resource-tag">Whitepaper</span>
-                                    <h5>The Solver Network | A Policy Vision for Collaborative Public Problem-Solving
-                                    </h5>
-                                    <p class="text-muted small mt-2">07 Apr 2026</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="resource-card">
-                                <img src="https://placehold.co/400x250/00B5CA/white?text=Whitepaper+Thumb" alt="">
-                                <div class="resource-body">
-                                    <span class="resource-tag">Whitepaper</span>
+
+                                    <!-- ---------------------------------------- -->
                                     <h5>State-led Urban Digital Transformation</h5>
                                     <p class="text-muted small mt-2">13 Mar 2026</p>
+                                    <!-- ------------------- -->
+                                    <div class="d-flex align-items-start flex-wrap" data-mh="res-1"
+                                        style="height: 18px;">
+                                        <ul class="d-flex align-items-center list-unstyled mb-0">
+                                            <li class="d-flex align-items-center me-3">
+                                                <div class="dot-style-2"></div>
+                                                <span class="text-style-6 blue-2 ms-2 fs-10-sm">
+                                                    T Krishnakumar <span class="ms-1">+2 More</span>
+                                                </span>
+                                            </li>
+                                            <li class="d-flex align-items-center me-3">
+                                                <div class="dot-style-2"></div>
+                                                <span class="text-style-6 blue-2 ms-2 fs-10-sm">07 Apr 2026</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="resource-tag">Local Governance</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="resource-card">
-                                <img src="https://placehold.co/400x250/00B5CA/white?text=Newsletter" alt="">
+                            <div class="resource-card" style="background-color: #e6f3fb;">
+                                <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2026/03/13060122/State-led-Thumb.jpg"
+                                    alt="">
                                 <div class="resource-body">
-                                    <span class="resource-tag">Newsletter</span>
-                                    <h5>DOT - A DIGIT QUARTERLY NEWSLETTER</h5>
-                                    <p class="text-muted small mt-2">20 Jan 2026</p>
+                                    <!-- ---------------------------------------- -->
+                                    <h5>State-led Urban Digital Transformation</h5>
+                                    <p class="text-muted small mt-2">13 Mar 2026</p>
+                                    <!-- ------------------- -->
+                                    <div class="d-flex align-items-start flex-wrap" data-mh="res-1"
+                                        style="height: 18px;">
+                                        <ul class="d-flex align-items-center list-unstyled mb-0">
+                                            <li class="d-flex align-items-center me-3">
+                                                <div class="dot-style-2"></div>
+                                                <span class="text-style-6 blue-2 ms-2 fs-10-sm">
+                                                    Mathews P Joseph <span class="ms-1">+2 More</span>
+                                                </span>
+                                            </li>
+                                            <li class="d-flex align-items-center me-3">
+                                                <div class="dot-style-2"></div>
+                                                <span class="text-style-6 blue-2 ms-2 fs-10-sm">07 Apr 2026</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="resource-tag">Odisha</span>
+                                    <span class="resource-tag">Kerala</span>
+                                    <span class="resource-tag">Local Governance</span>
+                                    <span class="resource-tag">Andhra Pradesh</span>
+                                    <span class="resource-tag">Punjab</span>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="resource-card" style="background-color: #e6f3fb;">
+                                <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/12/24103813/DOT-September-Thumb.jpg"
+                                    alt="">
+
+                                <!-- ---------------------------------------- -->
+                                <h5>State-led Urban Digital Transformation</h5>
+                                <p class="text-muted small mt-2">13 Mar 2026</p>
+                                <!-- ------------------- -->
+
+                                <!-- ----------------------------- -->
+                                <div class="d-flex align-items-start flex-wrap" data-mh="res-1" style="height: 18px;">
+                                    <ul class="d-flex align-items-center list-unstyled mb-0">
+                                        <li class="d-flex align-items-center me-3">
+                                            <div class="dot-style-2"></div>
+                                            <span class="text-style-6 blue-2 ms-2 fs-10-sm">
+                                                eGov Foundation <span class="ms-1">+2 More</span>
+                                            </span>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            <div class="dot-style-2"></div>
+                                            <span class="text-style-6 blue-2 ms-2 fs-10-sm">20 Jan 2026</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- -------------------------------------- -->
                             </div>
                         </div>
                     </div>
@@ -1765,7 +2472,7 @@
                 <div class="tab-pane fade" id="articles">
                     <div class="row">
                         <div class="col-md-4 mb-4">
-                            <div class="resource-card">
+                            <div class="resource-card" style="background-color: #e6f3fb;">
                                 <img src="https://placehold.co/400x250/00B5CA/white?text=Article" alt="">
                                 <div class="resource-body">
                                     <span class="resource-tag">Article</span>
@@ -1798,7 +2505,7 @@
                 </div>
             </div>
 
-            <div class="text-center mt-4">
+            <div class=" mt-4">
                 <a href="#" class="btn-style-1">See all</a>
             </div>
         </div>
@@ -1808,78 +2515,132 @@
     <section class="supporters-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title">Our <strong>Supporters</strong></h2>
+                <p class="section-title-our-supporters1">Our <strong
+                        class="section-title-our-supporters2">Supporters</strong></p>
             </div>
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-2 col-6 mb-4 text-center">
-                    <img src="https://placehold.co/120x60/1E293B/white?text=GOV" class="supporter-logo" alt="">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/Group-20708-1.png"
+                        class="supporter-logo" alt="">
                 </div>
                 <div class="col-md-2 col-6 mb-4 text-center">
-                    <img src="https://placehold.co/120x60/1E293B/white?text=Bill+Minds" class="supporter-logo" alt="">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/06/sup-4.png"
+                        class="supporter-logo" alt="">
                 </div>
                 <div class="col-md-2 col-6 mb-4 text-center">
-                    <img src="https://placehold.co/120x60/1E293B/white?text=TATA+Trusts" class="supporter-logo" alt="">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/06/sup-3.png"
+                        class="supporter-logo" alt="">
                 </div>
                 <div class="col-md-2 col-6 mb-4 text-center">
-                    <img src="https://placehold.co/120x60/1E293B/white?text=Global+Fund" class="supporter-logo" alt="">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/06/sup-2.png"
+                        class="supporter-logo" alt="">
                 </div>
                 <div class="col-md-2 col-6 mb-4 text-center">
-                    <img src="https://placehold.co/120x60/1E293B/white?text=Nandan+Nilekani" class="supporter-logo"
-                        alt="">
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/06/sup-1.png"
+                        class="supporter-logo" alt="">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!--  ================================ Footer========================================- -->
     <footer class="footer">
         <div class="container">
             <div class="row">
+                <!-- Column 1 - Logo & Social -->
                 <div class="col-lg-4 mb-4">
-                    <img src="https://placehold.co/200x50/FFFFFF/00B5CA?text=eGov+Foundation" alt="eGov Foundation"
-                        style="max-width: 180px; margin-bottom: 20px;">
-                    <p class="text-muted">Catalysing digital transformation in public service delivery at speed & scale.
+                    <img src="https://egov-website-content.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/08/25123706/eGov-Foundation.png"
+                        alt="eGov Foundation" class="footer-logo">
+                    <p class="footer-description">
+                        Catalysing digital transformation in public service delivery at speed & scale.
                     </p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/egovfoundation" aria-label="Facebook">
+                            <svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512"
+                                width="16" height="16">
+                                <path
+                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/egovfoundation" aria-label="Twitter">
+                            <svg aria-hidden="true" class="e-font-icon-svg e-fab-x-twitter" viewBox="0 0 512 512"
+                                width="16" height="16">
+                                <path
+                                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/egovfoundation/" aria-label="LinkedIn">
+                            <svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin-in" viewBox="0 0 448 512"
+                                width="16" height="16">
+                                <path
+                                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCJKHU1dQRrj2zdf6h2yHo_g" aria-label="YouTube">
+                            <svg aria-hidden="true" class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512"
+                                width="16" height="16">
+                                <path
+                                    d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                                </path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4">
+
+               
+                <!-- Column 2 - Useful Links with Grid (3 items each column) -->
+                <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Useful Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Our Impact</a></li>
-                        <li><a href="#">DIGIT Sandbox</a></li>
-                        <li><a href="#">Our People</a></li>
-                        <li><a href="#">Financials</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
+                    <div class="useful-links-grid">
+                        <!-- First Column - 3 items -->
+                        <ul class="footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Our Impact</a></li>
+                            <li><a href="#">DIGIT Sandbox</a></li>
+                        </ul>
+
+                        <ul class="footer-links">
+                            <li><a href="#">Our People</a></li>
+                            <li><a href="#">Financials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+
+                <!-- Column 3 - Subscribe Newsletter -->
+                <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Subscribe Now</h5>
-                    <p class="text-muted small">Receive regular updates of our monthly newsletter DOT - in your inbox.
+                    <p class="newsletter-text">Receive regular updates of our monthly newsletter DOT – in your inbox.
                     </p>
-                    <input type="email" class="newsletter-input" placeholder="Enter Your Email">
-                    <button class="btn-subscribe w-100">SUBSCRIBE</button>
+                    <div class="newsletter-wrapper">
+                        <form class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" class="newsletter-input" placeholder="Enter Your Email" required>
+                                <button type="submit" class="newsletter-button"></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-lg-3">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                    </ul>
-                </div>
+
+
             </div>
-            <hr class="my-4" style="background: #1E293B;">
-            <div class="text-center">
-                <p class="text-muted mb-0">©2024. eGov. All Rights Reserved.</p>
-            </div>
+
         </div>
     </footer>
-
+    <!-- Footer Bottom - Rights Reserved -->
+    <div class="footer-bottom" style="background-color: #1577DD;">
+        <div class="footer-bottom-content">
+            <div class="copyright-text">©2024. eGov. All Rights Reserved.</div>
+            <div class="footer-legal-links">
+                <a href="#">Privacy Policy</a>
+                <span class="separator-dot"></span>
+                <a href="#">Terms and Conditions</a>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Add scroll animations
@@ -1901,10 +2662,6 @@
             observer.observe(el);
         });
     </script>
-
-    <!-- ===================first navbar script========================== -->
-
-    <!-- ========================first navbar script end================== -->
 
 </body>
 
